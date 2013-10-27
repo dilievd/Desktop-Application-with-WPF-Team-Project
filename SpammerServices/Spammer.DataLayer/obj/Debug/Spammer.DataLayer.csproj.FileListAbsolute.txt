@@ -1,0 +1,8 @@
+E:\XAMLTeamWork\SpammerServices\Spammer.DataLayer\obj\Debug\Spammer.DataLayer.csprojResolveAssemblyReference.cache
+E:\XAMLTeamWork\SpammerServices\Spammer.DataLayer\bin\Debug\Spammer.DataLayer.dll.config
+E:\XAMLTeamWork\SpammerServices\Spammer.DataLayer\bin\Debug\Spammer.DataLayer.dll
+E:\XAMLTeamWork\SpammerServices\Spammer.DataLayer\bin\Debug\Spammer.DataLayer.pdb
+E:\XAMLTeamWork\SpammerServices\Spammer.DataLayer\bin\Debug\EntityFramework.dll
+E:\XAMLTeamWork\SpammerServices\Spammer.DataLayer\bin\Debug\EntityFramework.xml
+E:\XAMLTeamWork\SpammerServices\Spammer.DataLayer\obj\Debug\Spammer.DataLayer.dll
+E:\XAMLTeamWork\SpammerServices\Spammer.DataLayer\obj\Debug\Spammer.DataLayer.pdb

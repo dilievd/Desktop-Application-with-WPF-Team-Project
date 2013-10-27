@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SpamBaseModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="SpamBaseEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="SendEmails" EntityType="SpamBaseModel.SendEmail" />
+    <EntitySet Name="Users" EntityType="SpamBaseModel.User" />
+    <AssociationSet Name="FK__SendEmail__UserI__1273C1CD" Association="SpamBaseModel.FK__SendEmail__UserI__1273C1CD">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="SendEmails" EntitySet="SendEmails" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="SendEmail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="Content" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="SendDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Recipients" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="User" Relationship="SpamBaseModel.FK__SendEmail__UserI__1273C1CD" FromRole="SendEmails" ToRole="Users" />
+    <Property Type="String" Name="Subject" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="AuthCode" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+    <Property Name="SessionKey" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="SendEmails" Relationship="SpamBaseModel.FK__SendEmail__UserI__1273C1CD" FromRole="Users" ToRole="SendEmails" />
+  </EntityType>
+  <Association Name="FK__SendEmail__UserI__1273C1CD">
+    <End Role="Users" Type="SpamBaseModel.User" Multiplicity="1" />
+    <End Role="SendEmails" Type="SpamBaseModel.SendEmail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SendEmails">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

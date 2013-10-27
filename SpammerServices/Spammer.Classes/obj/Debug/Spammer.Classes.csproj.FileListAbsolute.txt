@@ -1,0 +1,10 @@
+E:\XAMLTeamWork\SpammerServices\Spammer.Classes\bin\Debug\Spammer.Classes.dll
+E:\XAMLTeamWork\SpammerServices\Spammer.Classes\bin\Debug\Spammer.Classes.pdb
+E:\XAMLTeamWork\SpammerServices\Spammer.Classes\obj\Debug\Spammer.Classes.csprojResolveAssemblyReference.cache
+E:\XAMLTeamWork\SpammerServices\Spammer.Classes\obj\Debug\Spammer.Classes.dll
+E:\XAMLTeamWork\SpammerServices\Spammer.Classes\obj\Debug\Spammer.Classes.pdb
+C:\Users\Dimitar\Desktop\WPF Teamwork\SpammerServices\Spammer.Classes\bin\Debug\Spammer.Classes.dll
+C:\Users\Dimitar\Desktop\WPF Teamwork\SpammerServices\Spammer.Classes\bin\Debug\Spammer.Classes.pdb
+C:\Users\Dimitar\Desktop\WPF Teamwork\SpammerServices\Spammer.Classes\obj\Debug\Spammer.Classes.csprojResolveAssemblyReference.cache
+C:\Users\Dimitar\Desktop\WPF Teamwork\SpammerServices\Spammer.Classes\obj\Debug\Spammer.Classes.dll
+C:\Users\Dimitar\Desktop\WPF Teamwork\SpammerServices\Spammer.Classes\obj\Debug\Spammer.Classes.pdb

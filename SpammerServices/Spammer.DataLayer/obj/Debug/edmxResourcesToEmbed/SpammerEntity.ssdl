@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SpamBaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="SpamBaseModelStoreContainer">
+    <EntitySet Name="SendEmails" EntityType="SpamBaseModel.Store.SendEmails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="SpamBaseModel.Store.Users" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__SendEmail__UserI__1273C1CD" Association="SpamBaseModel.Store.FK__SendEmail__UserI__1273C1CD">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="SendEmails" EntitySet="SendEmails" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="SendEmails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Subject" Type="ntext" Nullable="false" />
+    <Property Name="Content" Type="ntext" Nullable="false" />
+    <Property Name="SendDate" Type="datetime" Nullable="false" />
+    <Property Name="Recipients" Type="ntext" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="AuthCode" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="SessionKey" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="256" />
+  </EntityType>
+  <Association Name="FK__SendEmail__UserI__1273C1CD">
+    <End Role="Users" Type="SpamBaseModel.Store.Users" Multiplicity="1" />
+    <End Role="SendEmails" Type="SpamBaseModel.Store.SendEmails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SendEmails">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
